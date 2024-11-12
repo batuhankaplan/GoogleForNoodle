@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontstyle.css">
+    <title>GoogleForNoodle</title>
+</head>
+<body>
+    <button onclick="openImageSearchPage()" class="images-button">Görseller</button>
+
+    <div class="search-container">
+        <div class="logo">N<span>o</span><span>o</span>D<span>l</span>e</div>
+        <form action="https://www.google.com/search" method="get" target="_blank" class="search-box">
+            <input type="text" name="q" class="search-input" placeholder="Noodle'da arayın" required>
+        </form>
+
+        <div class="button-container">
+            <button onclick="googleSearch()" class="search-button">Noodle'da Ara</button>
+            <button onclick="feelingLucky()" class="search-button">Kendimi Şanslı Hissediyorum</button>
+        </div>
+    </div>
+
+    <script>
+        function googleSearch() {
+            const query = document.querySelector('.search-input').value;
+            if (query) {
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            }
+        }
+
+        function feelingLucky() {
+            const query = document.querySelector('.search-input').value;
+            if (query) {
+                window.open(`https://www.google.com/search?btnI=1&q=${encodeURIComponent(query)}`, '_blank');
+            }
+        }
+
+        function openImageSearchPage() {
+            window.open("image-search.html", "_blank");
+        }
+    </script>
+</body>
+</html>

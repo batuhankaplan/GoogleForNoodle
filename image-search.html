@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontstyle.css">
+    <title>Görsellerde Ara</title>
+   
+</head>
+<body>
+    <div class="search-container">
+        <div class="logo">N<span>o</span><span>o</span>D<span>l</span>e</div>
+        <div class="search-box">
+            <input type="text" id="image-search-input" class="search-input" placeholder="Görsellerde aramak için yazın">
+        </div>
+        <button onclick="searchImages()" class="search-button">Görsellerde Arat</button>
+    </div>
+    
+    <script>
+        function searchImages() {
+            const query = document.getElementById('image-search-input').value;
+            if (query) {
+                window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(query)}`, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
